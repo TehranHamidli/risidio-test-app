@@ -1,5 +1,5 @@
-
-import HeaderMain from "@/components/HomeMain";
+'use client'
+import HeaderMain from "@/components/Home";
 import Collections from "@/components/Collections";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <div className="sm:w-[90%] w-[95%] mx-auto my-6 font-inter">
         <Header account={false} />
-        <Stripes className="mt-[5rem]" />
+        <Stripes className="mt-[8rem]" />
         <HeaderMain />
         <Collections />
       </div>

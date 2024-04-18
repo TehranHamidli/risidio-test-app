@@ -1,6 +1,7 @@
 import Text from "../Text";
 import { Img } from "../Img";
 import Heading from "../Heading";
+import Button from "../Button";
 
 interface CollectionTypes {
   className?: string,
@@ -11,9 +12,9 @@ interface CollectionTypes {
   return (
     <div className="flex gap-12 md:flex-row max-w-md: flex-col items-center justify-between w-full rounded-[30px] my-12 py-10 px-14">
       <div className="md:w-[50%] max-w-md: w-full flex flex-col">
-        <button className="bg-[#FADFE4] text-gray-900 rounded-[49px] font-medium w-[150px] py-4">
+        <Button className="bg-[#FADFE4] text-gray-900 rounded-[49px] font-medium w-[150px] py-4">
           Trending now
-        </button>
+        </Button>
 
         <Text className="mt-[38px] text-[1.5rem] text-[#617587] font-inter">
           Collection

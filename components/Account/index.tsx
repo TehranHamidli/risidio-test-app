@@ -4,10 +4,11 @@ import { Img } from "../Img";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { setAccount } from "@/features/accountSlice";
+import Button from "../Button";
 
 interface AccountProps {
   account: boolean;
-  setAccount: () => void;
+  setAccount?: () => void;
 }
 
 const Account: React.FC<AccountProps> = () => {
@@ -84,10 +85,10 @@ const Account: React.FC<AccountProps> = () => {
               <p className="text-center my-14 text-[#617587]">
                 You don’t own any NFTs yet
               </p>
-              <Link className="w-full text-center" href="/connect-wallet">
-                <button className="w-[80%] py-4 text-base font-semibold rounded-[33px] text-[#fff] bg-[#23252B] ]">
+              <Link className="w-full text-center" href="/collection">
+                <Button className="w-[80%] py-4 text-base font-semibold rounded-[33px] text-[#fff] bg-[#23252B] ]">
                   Start shopping
-                </button>
+                </Button>
               </Link>
             </div>
           )}
