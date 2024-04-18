@@ -34,7 +34,7 @@ const Account: React.FC<AccountTypes> = () => {
           <div className="cursor-pointer" onClick={closeAccountPopup}>
             <Img
               src="/images/vector-to-right.svg"
-              className="h-[12px] w-[12px] fixed top-[40px] max-w-sm: right-[360px] sm:right-[400px]"
+              className="h-[12px] w-[12px] fixed top-[40px]  right-[360px] sm:right-[400px]"
             />
             <Img
               src="/images/vector-to-right.svg"
@@ -43,7 +43,7 @@ const Account: React.FC<AccountTypes> = () => {
           </div>
 
           <div className="flex flex-col w-full">
-            <div className="flex sm:flex-row max-w-sm: flex-col items-center justify-between">
+            <div className=" flex  items-center justify-between">
               <div className="flex items-center w-full gap-4">
                 <div className="bg-[#29627F] w-[50px] h-[50px] rounded-[50%]"></div>
 
@@ -72,13 +72,13 @@ const Account: React.FC<AccountTypes> = () => {
 
           {nftImage.length !== 0 ? (
             <>
-              <div className="overflow-y-auto h-[300px] mx-auto px-auto">
+              <div className="overflow-y-auto h-[300px] mx-auto px-auto ">
                 {nftImage &&
                   nftImage.map((item, index) => (
                     <Img
                       src={item.image}
                       alt={`NFT ${index}`}
-                      className="sm:ml-6 mt-8 rounded-[34px] sm:w-[300px]  w-[160px] mx-auto h-[200px]"
+                      className="sm:ml-6 mt-8 rounded-[34px] sm:w-[300px]  w-[400] mx-auto h-[200px]"
                       key={index}
                     />
                   ))}
