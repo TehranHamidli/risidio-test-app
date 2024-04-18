@@ -1,28 +1,25 @@
 
 import  NextImage,{ StaticImageData } from "next/image";
 
-export type ImgProps = React.DetailedHTMLProps<
-  React.ImgHTMLAttributes<HTMLImageElement>,
-  HTMLImageElement
-> &
-  Partial<{
+interface ImageTypes 
+ {
     className: string;
     src:  string | StaticImageData;
-    width: number;
-    height: number;
-    alt: string;
-    onClick: () => void;
-  }>;
+    width?: number;
+    height?: number;
+    alt?: string;
+    onClick?: () => void;
+  }
 
 const Img = ({
   className,
   onClick,
-  src = "/defaultNoData.png",
-  alt = "testImg",
+  src = "/defaultImg.png",
+  alt = "Img",
   width = 300,
   height = 300,
   ...restProps
-}: ImgProps) => {
+}: ImageTypes) => {
   return (
     <NextImage
     className={className}

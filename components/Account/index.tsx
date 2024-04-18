@@ -5,13 +5,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { setAccount } from "@/features/accountSlice";
 import Button from "../Button";
+import Text from "../Text";
 
-interface AccountProps {
+interface AccountTypes {
   account: boolean;
   setAccount?: () => void;
 }
 
-const Account: React.FC<AccountProps> = () => {
+const Account: React.FC<AccountTypes> = () => {
 
   const { nftImage } = useSelector((state: RootState) => state.nft);
   const { account } = useSelector((state: RootState) => state.account);
@@ -45,7 +46,9 @@ const Account: React.FC<AccountProps> = () => {
             <div className="flex sm:flex-row max-w-sm: flex-col items-center justify-between">
               <div className="flex items-center w-full gap-4">
                 <div className="bg-[#29627F] w-[50px] h-[50px] rounded-[50%]"></div>
-                <p>STV6Q...4Z7WD</p>
+
+                <Text> STV6Q...4Z7WD</Text>
+
                 <Img
                   src="/images/copy.svg"
                   className="h-[20x] w-[20px] cursor-pointer"
@@ -60,12 +63,12 @@ const Account: React.FC<AccountProps> = () => {
             </div>
           </div>
 
-          <p className="mt-8 text-[#7B7B7B] text-[0.8rem]">In your wallet</p>
-          <p className="text-[#02071D] font-semibold text-[2.1rem]">
+          <Text className="mt-8 text-[#7B7B7B] text-[0.8rem]">In your wallet</Text>
+          <Text className="text-[#02071D] font-semibold text-[2.1rem]">
             0.129 BTC
-          </p>
+          </Text>
 
-          <p className="font-[800] mt-14 ml-6">Your NFTs</p>
+          <Text className="font-[800] mt-14 ml-6">Your NFTs</Text>
 
           {nftImage.length !== 0 ? (
             <>
@@ -75,7 +78,7 @@ const Account: React.FC<AccountProps> = () => {
                     <Img
                       src={item.image}
                       alt={`NFT ${index}`}
-                      className="sm:ml-6 mt-8 rounded-[34px] sm:w-[300px] max-w-sm: w-[160px] mx-auto h-[200px]"
+                      className="sm:ml-6 mt-8 rounded-[34px] sm:w-[300px]  w-[160px] mx-auto h-[200px]"
                       key={index}
                     />
                   ))}
@@ -83,9 +86,9 @@ const Account: React.FC<AccountProps> = () => {
             </>
           ) : (
             <div className="flex flex-col">
-              <p className="text-center my-14 text-[#617587]">
+              <Text className="text-center my-14 text-[#617587]">
                 You don’t own any NFTs yet
-              </p>
+              </Text>
               <Link className="w-full text-center" href="/collection">
                 <Button className="w-[80%] py-4 text-base font-semibold rounded-[33px] text-[#fff] bg-[#23252B] ]">
                   Start shopping

@@ -1,5 +1,6 @@
-import Heading from "../Heading"
+
 import NftItem from "../NftItem"
+import Text from "../Text"
 
 
 const nfts = [
@@ -40,9 +41,9 @@ const nfts = [
 const Nfts = () => {
   return (
     <div className="mb-32">
-        <Heading  className="mt-[133px] !font-extrabold text-[2rem]">
+        <Text  className="mt-[133px] !font-extrabold text-[2rem]">
               NFTs
-            </Heading>
+            </Text>
             <div className="justify-between w-full mt-[53px] gap-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
             {nfts.map((item, index) => (

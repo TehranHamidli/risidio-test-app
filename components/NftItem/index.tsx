@@ -4,6 +4,7 @@ import { MouseEventHandler, useState } from "react";
 import Text from "../Text";
 import { useDispatch } from "react-redux";
 import { setSelectedNft } from "@/features/nftSlice";
+import Button from "../Button";
 
 interface NftItemsProps {
   title: string;
@@ -18,10 +19,9 @@ const NftItem = ({ title, image, price }: NftItemsProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
 
-  const handleButtonClick: MouseEventHandler<HTMLButtonElement> = () => {
-   dispatch(setSelectedNft({ image }));
+  const handleButtonClick: () => void = () => {
+    dispatch(setSelectedNft({ image }));
   };
-
   return (
     <div className="flex flex-col w-[85%] p-4 shadow-[-6px_-6px_20px_4px_rgba(0,0,0,0.1),_6px_6px_20px_4px_rgba(45,78,255,0.15)] rounded-[47px] mx-auto">
       <div className="flex flex-col items-center justify-start w-full mb-[42px] gap-[43px]">
@@ -37,14 +37,14 @@ const NftItem = ({ title, image, price }: NftItemsProps) => {
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
-              <button
+              <Button
                 onClick={handleButtonClick}
                 className={`bg-[#FAFAFA] w-max h-[60px] px-12 left-0 bottom-0 right-0 top-0 m-auto font-semibold absolute rounded-[33px] transition-opacity duration-300 ${
                   isHovered ? "opacity-100" : "opacity-0"
                 }`}
               >
                 Buy --&gt;
-              </button>
+              </Button>
             </div>
           </div>
         </div>

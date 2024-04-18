@@ -1,5 +1,6 @@
-import CollectionItem from "../CollectionItem"
-import Heading from "../Heading"
+import CollectionCard from "../CollectionCard"
+
+import Text from "../Text"
 
 const collectionData = [
   {
@@ -23,16 +24,16 @@ const collectionData = [
 
 ]
 
-const Collections = () => {
+const CollectionSection = () => {
   return (
     <div className="w-full mb-24">
-        <Heading as="h3" className="mt-[119px] !font-extrabold">
+        <Text  className="mt-[119px] !font-extrabold">
         Collections
-      </Heading>
+      </Text>
 
       <div className="flex md:flex-row max-w-md: flex-col items-center justify-center mt-[41px] gap-10 mx-auto w-full">
         {collectionData.map((item, index) => (
-        <CollectionItem key={index} {...item} />
+        <CollectionCard key={index} {...item} />
         )) }
         </div>
 
@@ -42,4 +43,4 @@ const Collections = () => {
   )
 }
 
-export default Collections
+export default CollectionSection

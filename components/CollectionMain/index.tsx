@@ -1,13 +1,8 @@
 import Text from "../Text";
 import { Img } from "../Img";
-import Heading from "../Heading";
 import Button from "../Button";
 
-interface CollectionTypes {
-  className?: string,
-}
-
-  const CollectionMain: React.FC<CollectionTypes> = ({ className }) => {
+  const CollectionMain = () => {
 
   return (
     <div className="flex gap-12 md:flex-row max-w-md: flex-col items-center justify-between w-full rounded-[30px] my-12 py-10 px-14">
@@ -20,9 +15,9 @@ interface CollectionTypes {
           Collection
         </Text>
 
-        <Heading  className=" w-full text-[4rem] font-bold">
+        <Text  className=" w-full text-[4rem] font-bold">
           Night Sky
-        </Heading>
+        </Text>
 
         <Text className="leading-8 mt-4">
           Lorem ipsum dolor sit amet, consectetur adicing elit, sed do eiusmod
@@ -39,10 +34,10 @@ interface CollectionTypes {
           />
 
           <div>
-            <Text size="xs" as="p" className="text-[#617587]">
+            <Text className="text-[#617587]">
               Artist
             </Text>
-            <Text size="xl" as="p" className="!text-gray-900">
+            <Text  className="!text-gray-900">
               Léa Jacquot
             </Text>
           </div>

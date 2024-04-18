@@ -1,5 +1,4 @@
 import React from "react";
-import Heading from "../Heading";
 import Text from "../Text";
 import { Img } from "../Img";
 import Link from "next/link";
@@ -16,9 +15,9 @@ const Home = () => {
         <Text className="mt-[38px] text-[1.5rem] text-[#617587] font-inter">
           Night sky collection
         </Text>
-        <Heading as="h3" className="w-full text-[3rem] mt-6 !font-extrabold">
+        <Text  className="w-full text-[3.5rem] mt-6 font-bold">
           With the stars
-        </Heading>
+        </Text>
 
         <div className="flex items-center gap-4 mt-10">
           <Img
@@ -28,16 +27,16 @@ const Home = () => {
           />
 
           <div>
-            <Text size="xs" as="p" className="text-[#617587]">
+            <Text  className="text-[#617587]">
               Artist
             </Text>
-            <Text size="xl" as="p" className="!text-gray-900">
+            <Text className="!text-gray-900">
               Léa Jacquot
             </Text>
           </div>
         </div>
 
-        <div className="md:w-[75%] item-center flex justify-between mt-8 gap-4">
+        <div className="md:w-[75%] item-center flex justify-between mt-8 gap-4 max-w-[500px]">
           <div className="w-[220px]">
             <Link className="w-full" href="/connect-wallet">
               <Button className="w-full py-4 text-base font-semibold rounded-[33px] text-[#fff] bg-[#23252B] ]">

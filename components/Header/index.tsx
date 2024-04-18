@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
@@ -6,7 +6,6 @@ import { Img } from "../Img";
 import Button from "../Button";
 import { useDispatch, useSelector } from "react-redux";
 import { setAccount } from "@/features/accountSlice";
-import { RootState } from "@/store/store";
 import Account from "../Account";
 
 interface HeaderTypes {
@@ -19,13 +18,13 @@ const Header: React.FC<HeaderTypes> = ({ account }) => {
 
   const handleAccountButtonClick = () => {
     setShowAccount(!showAccount);
-    dispatch(setAccount(!showAccount)); 
+    dispatch(setAccount(!showAccount));
   };
 
   const handleOutsideClick = () => {
     if (showAccount) {
       setShowAccount(false);
-      dispatch(setAccount(false)); 
+      dispatch(setAccount(false));
     }
   };
 
@@ -40,6 +39,11 @@ const Header: React.FC<HeaderTypes> = ({ account }) => {
           />
         </Link>
         <div className="flex gap-6">
+        {/* <Link href={'/connect-wallet'}>
+        <Button className="border-gray-900 border font-semibold border-solid text-[#23252B] py-4 px-8 rounded-[87px]">
+            Connect Wallet
+          </Button>
+        </Link> */}
           <Button
             onClick={handleAccountButtonClick}
             className="border-gray-900 border font-semibold border-solid text-[#23252B] py-4 px-8 rounded-[87px]"
@@ -48,10 +52,14 @@ const Header: React.FC<HeaderTypes> = ({ account }) => {
           </Button>
         </div>
       </div>
-      {showAccount && <div className="absolute top-full left-0 z-1  border border-gray-300 "> {/* Account bileşeni burada gösterilecek */}
-        <Account account={false} />
-      </div>}
-      {showAccount && <div className="fixed inset-0 z-30 " onClick={handleOutsideClick}></div>} {/* Dışarıya tıklandığında Account bileşeninin kapanması */}
+      {showAccount && (
+        <div className="absolute top-full left-0 z-1  border border-gray-300 ">
+          <Account account={false} />
+        </div>
+      )}
+      {showAccount && (
+        <div className="fixed inset-0 z-30 " onClick={handleOutsideClick}></div>
+      )}
     </div>
   );
 };

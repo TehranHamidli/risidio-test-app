@@ -1,6 +1,6 @@
 'use client'
 import HeaderMain from "@/components/Home";
-import Collections from "@/components/Collections";
+import Collections from "@/components/CollectionSection";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Stripes from "@/components/Stripes";
