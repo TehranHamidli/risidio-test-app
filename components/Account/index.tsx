@@ -26,18 +26,18 @@ const Account: React.FC<AccountProps> = () => {
     <div>
       {account && (
         <div
-          className={`pt-[16px] pb-[100px] px-[24px] fixed right-0 z-50 top-[10px] bg-[#fff] sm:w-[400px] max-w-sm: w-[250px] popup rounded-[30px] border-2 border-[#02071D] popup ${
+          className={`pt-[16px] pb-[100px] px-[24px] fixed right-0 z-50 top-[10px] bg-[#fff] sm:w-[400px] w-[92%] rounded-[30px] border-2 border-[#02071D]  ${
             account ? "open" : "closed"
           }`}
         >
           <div className="cursor-pointer" onClick={closeAccountPopup}>
             <Img
               src="/images/vector-to-right.svg"
-              className="h-[12px] w-[12px] fixed top-[40px] max-w-sm: right-[250px] sm:right-[400px]"
+              className="h-[12px] w-[12px] fixed top-[40px] max-w-sm: right-[360px] sm:right-[400px]"
             />
             <Img
               src="/images/vector-to-right.svg"
-              className="h-[12px] w-[12px] fixed top-[40px] max-w-sm: right-[258px] sm:right-[408px]"
+              className="h-[12px] w-[12px] fixed top-[40px] right-[350px] sm:right-[408px]"
             />
           </div>
 
@@ -76,6 +76,7 @@ const Account: React.FC<AccountProps> = () => {
                       src={item.image}
                       alt={`NFT ${index}`}
                       className="sm:ml-6 mt-8 rounded-[34px] sm:w-[300px] max-w-sm: w-[160px] mx-auto h-[200px]"
+                      key={index}
                     />
                   ))}
               </div>

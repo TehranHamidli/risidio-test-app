@@ -1,9 +1,6 @@
 import Account from '@/components/Account';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
-interface AccountTypes {
-  account: boolean;
-}
 const initialState = {
 account:false
 

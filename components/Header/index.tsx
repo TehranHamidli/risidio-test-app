@@ -1,4 +1,6 @@
-"use client";
+'use client'
+
+import React, { useState } from "react";
 import Link from "next/link";
 import { Img } from "../Img";
 import Button from "../Button";
@@ -11,16 +13,24 @@ interface HeaderTypes {
   account: boolean;
 }
 
-const Header: React.FC<HeaderTypes> = () => {
+const Header: React.FC<HeaderTypes> = ({ account }) => {
   const dispatch = useDispatch();
-  const { account } = useSelector((state: RootState) => state.account);
+  const [showAccount, setShowAccount] = useState(false);
 
   const handleAccountButtonClick = () => {
-    dispatch(setAccount(true));
+    setShowAccount(!showAccount);
+    dispatch(setAccount(!showAccount)); 
+  };
+
+  const handleOutsideClick = () => {
+    if (showAccount) {
+      setShowAccount(false);
+      dispatch(setAccount(false)); 
+    }
   };
 
   return (
-    <>
+    <div className="relative">
       <div className="flex justify-between items-center sm:px-[5rem] px-6 py-4 fixed top-0 left-0 w-full z-50 bg-white ">
         <Link href="/">
           <Img
@@ -29,14 +39,7 @@ const Header: React.FC<HeaderTypes> = () => {
             src="/images/marketplace.png"
           />
         </Link>
-        <div className="flex gap-6 ">
-          {/* <Link href="/connect-wallet">
-            <Button className="border-gray-900 border font-semibold border-solid text-[#23252B] py-4 px-8 rounded-[87px]">
-              Connect Wallet
-            </Button>
-          </Link> */}
-          {account && <Account account={false} />}
-
+        <div className="flex gap-6">
           <Button
             onClick={handleAccountButtonClick}
             className="border-gray-900 border font-semibold border-solid text-[#23252B] py-4 px-8 rounded-[87px]"
@@ -45,7 +48,11 @@ const Header: React.FC<HeaderTypes> = () => {
           </Button>
         </div>
       </div>
-    </>
+      {showAccount && <div className="absolute top-full left-0 z-1  border border-gray-300 "> {/* Account bileşeni burada gösterilecek */}
+        <Account account={false} />
+      </div>}
+      {showAccount && <div className="fixed inset-0 z-30 " onClick={handleOutsideClick}></div>} {/* Dışarıya tıklandığında Account bileşeninin kapanması */}
+    </div>
   );
 };
 
