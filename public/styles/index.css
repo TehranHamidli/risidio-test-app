@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter;
+}
+* {
+  box-sizing: border-box;
+  line-height: normal;
+  font-family: inherit;
+  margin: unset;
+}
+a {
+  display: block;
+}
+ul {
+  margin: 0;
+  margin-inline: 0 !important;
+  padding: 0;
+  list-style: none;
+}
+.ReactModal__Overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background: transparent;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #6b6b6b;
+  border-radius: 10px;
+}
+
+.hover\:opacity-100:hover button {
+  opacity: 1;
+}
+
+.popup {
+  box-shadow: #D4D4D43B -5px 0, #D4D4D43B -10px 0, #D4D4D43B -15px 0, #D4D4D43B -20px 0, #D4D4D43B -25px 0;
+  transform: translateX(100%);
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateX(100%);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+      transform: translateX(0);
+  }
+  to {
+      opacity: 0;
+      transform: translateX(100%);
+  }
+}
+
+.popup.open {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.popup.closed {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+
+@media screen and (max-width: 1050px) {
+  html {
+      font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  html {
+      font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  html {
+      font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  html {
+      font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  html {
+      font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  html {
+      font-size: 12px;
+  }
+}
